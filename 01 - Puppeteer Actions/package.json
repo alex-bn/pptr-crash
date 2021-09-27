@@ -1,5 +1,5 @@
 {
-  "name": "PPTR",
+  "name": "pptr",
   "version": "1.0.0",
   "description": "Automated testing framework with Puppeteer",
   "main": "index.js",
