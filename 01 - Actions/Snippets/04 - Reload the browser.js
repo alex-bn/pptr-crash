@@ -1,24 +1,23 @@
 const puppeteer = require('puppeteer')
 
-describe('My fist puppeteer test', () => {
+describe('Puppeteer test', () => {
 	//
 	it('should load the browser', async function () {
 		const browser = await puppeteer.launch({
-			headless: true,
+			headless: false,
 			slowMo: 10,
 			devtools: false,
 		})
 		const page = await browser.newPage()
 		await page.goto('http://example.com/')
+		await page.waitForTimeout(3000)
+		await page.waitForSelector('h1')
 
-		// Shortcut for page.mainFrame().title()
-		const title = await page.title()
+		// Reload the page, wait 3s and check that the selector is still there:
+		await page.reload()
 
-		// This is a shortcut for page.mainFrame().url()
-		const url = await page.url()
-
-		console.log(`Title: ${title}`)
-		console.log(`URL: ${url}`)
+		await page.waitForTimeout(3000)
+		await page.waitForSelector('h1')
 
 		await browser.close()
 	})

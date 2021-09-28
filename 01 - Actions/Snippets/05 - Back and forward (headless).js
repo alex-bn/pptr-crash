@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-describe('My fist puppeteer test', () => {
+describe('Puppeteer test', () => {
 	//
 	it('should load the browser', async function () {
 		const browser = await puppeteer.launch({

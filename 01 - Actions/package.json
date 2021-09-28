@@ -4,7 +4,10 @@
   "description": "Automated testing framework with Puppeteer",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Actions/example.test.js"
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Functions/example.test.js",
+    "device": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Functions/device.test.js",
+    "e2e": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Functions/e2e.test.js",
+    "test:e2e": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./e2e/*.test.js"
   },
   "keywords": [
     "Puppeteer",

@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer')
 const { expect } = require('chai')
 
-describe('My fist puppeteer test', () => {
+describe('Puppeteer test', () => {
 	//
 	it('should load the browser', async function () {
 		const browser = await puppeteer.launch({

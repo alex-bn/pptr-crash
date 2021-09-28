@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-describe('My fist puppeteer test', () => {
+describe('Puppeteer test', () => {
 	//
 	it('should load the browser', async function () {
 		const browser = await puppeteer.launch({
@@ -11,10 +11,14 @@ describe('My fist puppeteer test', () => {
 		const page = await browser.newPage()
 		await page.goto('http://example.com/')
 
-		// This method runs document.querySelector within the page and passes it as the first argument to pageFunction
+		// Shortcut for page.mainFrame().title()
+		const title = await page.title()
 
-		const text = await page.$eval('h1', element => element.textContent)
-		console.log(`Text in the h1 element: ${text}`)
+		// This is a shortcut for page.mainFrame().url()
+		const url = await page.url()
+
+		console.log(`Title: ${title}`)
+		console.log(`URL: ${url}`)
 
 		await browser.close()
 	})
