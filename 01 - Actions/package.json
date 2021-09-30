@@ -4,9 +4,9 @@
   "description": "Automated testing framework with Puppeteer",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Functions/example.test.js",
-    "device": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Functions/device.test.js",
-    "e2e": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Functions/e2e.test.js",
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Snippets/example.test.js",
+    "device": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Snippets/device.test.js",
+    "e2e": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./Snippets/e2e.test.js",
     "test:e2e": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./e2e/*.test.js"
   },
   "keywords": [
@@ -16,7 +16,7 @@
     "Automation",
     "Jest"
   ],
-  "author": "AlexB",
+  "author": "Alex Bajan",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.4",

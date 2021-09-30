@@ -8,30 +8,29 @@ const {
 	shouldNotExist,
 } = require('../lib/helper')
 
-describe('Puppeteer tests', () => {
+describe('Proxy server', () => {
 	let browser
 	let page
 
-	before('some description', async function () {
+	before(async function () {
 		browser = await puppeteer.launch({
-			headless: false,
-			slowMo: 10,
+			headless: true,
+			slowMo: 0,
 			devtools: false,
+			ignoreHTTPSErrors: true,
+			// args: ['--proxy-server=127.0.0.1:3030'],
 		})
 		page = await browser.newPage()
-		await page.setDefaultTimeout(10000)
 		await page.setDefaultNavigationTimeout(20000)
+		await page.setDefaultTimeout(10000)
 	})
 
-	after('some description', async function () {
+	after(async function () {
 		await browser.close()
 	})
 
-	it('should use the helper functions', async function () {
-		await page.goto('http://www.uitestingplayground.com/')
-		await click(
-			page,
-			'div.row:nth-child(2) > div:nth-child(3) > h3:nth-child(1) > a:nth-child(1)'
-		)
+	it('Should send the request via proxy', async function () {
+		// For this, you will need a working proxy and a destination URL to send the request to
+		await page.goto('https://www.amazon.com')
 	})
 })
