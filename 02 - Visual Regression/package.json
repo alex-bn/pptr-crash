@@ -1,0 +1,17 @@
+{
+  "name": "02---visual-regression",
+  "version": "1.0.0",
+  "description": "visual regression",
+  "main": "index.js",
+  "scripts": {
+    "test-snapshots": "jest --config=jest.config.js --detectOpenHandles --forceExit",
+    "test-snapshots-update": "jest --config=jest.config.js --updateSnapshot --detectOpenHandles --forceExit"
+  },
+  "author": "AB",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.2.4",
+    "jest-image-snapshot": "^4.5.1",
+    "puppeteer": "^10.4.0"
+  }
+}
