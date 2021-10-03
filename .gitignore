@@ -4,3 +4,5 @@ package-lock.json
 02 - Visual Regression/node_modules
 03 - Jest/node_modules
 04 - Builder Pattern Framework/node_modules
+05 - BDD and Cucumber/node_modules
+06 - Codecept/node_modules
