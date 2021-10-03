@@ -1,0 +1,5 @@
+describe('Config test', () => {
+	it('should test that the config is working', () => {
+		console.log(`It's working, your config files are OK.`)
+	})
+})

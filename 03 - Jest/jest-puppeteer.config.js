@@ -1,6 +1,9 @@
 module.exports = {
 	launch: {
-		headless: false,
+		headless: true,
+		slowMo: 0,
+		devtools: false,
+		ignoreHTTPSErrors: true,
 	},
 	browserContext: 'default',
 }

@@ -1,0 +1,36 @@
+import puppeteer from 'puppeteer'
+import { step } from 'mocha-steps'
+import { click } from '../../lib/helper'
+
+describe('Mocha steps demo', () => {
+	let browser
+	let page
+
+	before(async () => {
+		browser = await puppeteer.launch({ headless: true })
+		page = await browser.newPage()
+		await page.setDefaultTimeout(7000)
+	})
+
+	after(async () => {
+		await browser.close()
+	})
+
+	step('should load google search page', async () => {
+		await page.goto('https://google.com')
+		await click(page, '#L2AGLb')
+	})
+
+	// will stop the execution of test steps at the failure point!
+	// step('should fail the test', async () => {
+	// 	await page.waitForSelector('#FAIL')
+	// })
+
+	step('should type into input filed', async () => {
+		await page.type('input[type="text"]', 'automation')
+	})
+
+	step('should click search', async () => {
+		await page.keyboard.press('Enter')
+	})
+})
