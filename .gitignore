@@ -3,9 +3,12 @@ package-lock.json
 jenkins.war
 01 - Actions/node_modules
 02 - Visual Regression/node_modules
-03 - Jest/node_modules
+03 - Jest framework/node_modules
 04 - Builder Pattern Framework/node_modules
 05 - BDD and Cucumber/node_modules
 06 - Codecept/node_modules
+07 - Jenkins
 07 - Jenkins/node_modules
 08 - Tips and tricks/node_modules
+09 - Web Scraper/node_modules
+10 - HTML + JS for testing

@@ -1,0 +1,51 @@
+1) cd into your project dir
+
+2) npm init
+
+3) npm i puppeteer jest jest-puppeteer
+
+4) configure jest by typing into the console: ./node_modules/.bin/jest --init
+
+5) add into the jest.config.js file: 
+     preset: "jest-puppeteer"
+,and comment: testEnvironment: "node" 
+
+6) at the root of the prj create jest-puppeteer.config.js
+
+7) create the launching configuration:
+module.exports = {
+  launch: {
+    headless: true,
+  },
+  browserContext: 'default',
+};
+
+8) update the script: "test": "jest --forceExit"
+
+9) create the test folder and inside, the test.js file
+
+10) add your test:
+describe('Sample test', () => {
+  jest.setTimeout(7000);
+
+  beforeAll(async () => {
+    await page.goto('https://google.com');
+  });
+
+  it('Step 1: ...', async () => {
+    await page.waitForSelector('#L2AGLb');
+    await page.click('#L2AGLb');
+  });
+
+  it('Step 2: ...', async () => {
+    await page.waitForSelector('input[name="q"]');
+    await page.type('input[name="q"]', 'automation');
+    await page.waitForTimeout(5000);
+  });
+});
+
+11) use debug if necessary:  await jestPuppeteer.debug();
+
+
+
+

@@ -1,0 +1,28 @@
+1) npm install mocha chai puppeteer
+2) npm install --save-dev babel-cli babel-preset-es2015
+
+3) update script:
+
+
+./build/**.js -> es2015 test scripts
+build/ -> location of the built files
+tests/ -> location of your written tests
+
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./build/**.js",
+    "clean": "rmdir /s /q build",
+    "build": "babel --preset es2015 -d build/ tests/"
+  }
+
+
+4) create the .babelrc file at the root of the project and paste the preset:
+
+{
+  "presets": ["es2015"]
+}
+
+
+5) write your tests
+6) npm run build
+7) npm run test
+8) npm run clean

@@ -4,12 +4,22 @@
   "description": "tips and tricks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./build/**.js",
+    "mocha-steps": "node ./node_modules/mocha/bin/mocha --timeout=30000 --require mocha-steps ./build/**.js",
+    "clean": "rmdir /s /q build",
+    "build": "babel --preset es2015 -d build/ tests/"
   },
   "author": "Alex Bajan",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "mocha-steps": "^1.3.0",
     "puppeteer": "^10.4.0",
     "puppeteer-core": "^10.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
