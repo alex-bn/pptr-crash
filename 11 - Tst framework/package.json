@@ -1,0 +1,24 @@
+{
+  "name": "11---old-school-approach",
+  "version": "1.0.0",
+  "description": "Test framework, old school approach",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/*.js"
+  },
+  "keywords": [
+    "puppeteer",
+    "mocha",
+    "chai"
+  ],
+  "author": "Alex Bajan",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "puppeteer": "^10.4.0"
+  }
+}
